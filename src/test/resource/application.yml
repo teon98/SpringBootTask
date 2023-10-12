@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# model 프로퍼티 camel case 설정
+mybatis:
+  # xml파일 result type에 패키지명을 생략할 수 있도록 alias 설정
+  mapper-locations: classpath:mybatis-mapper/*.xml
+#spring.jpa.defer-datasource-initialization=true

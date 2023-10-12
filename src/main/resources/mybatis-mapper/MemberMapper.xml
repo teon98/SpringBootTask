@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.api.api.repository.MemberMapper">
+
+    <select id="getList" resultType="com.example.api.api.model.Task">
+        select * from MEMBER
+    </select>
+
+    <select id="getMember" resultType="com.example.api.api.model.Task">
+        select * from member where user_id=#{userID}
+    </select>
+
+    <insert id="save" parameterType="com.example.api.api.model.Task">
+        insert into MEMBER values(#{userID}, #{userPW}, #{userNickName}, #{userEmail})
+    </insert>
+
+    <update id="update" parameterType="com.example.api.api.model.Task">
+        update MEMBER set user_nickname = #{userNickName}, user_pw=#{userPW}, user_email=#{userEmail}
+        where user_id = #{userID}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        delete from MEMBER
+        where user_id = #{userID}
+    </delete>
+
+</mapper>
