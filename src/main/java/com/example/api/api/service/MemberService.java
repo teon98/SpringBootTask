@@ -47,4 +47,8 @@ public class MemberService {
         return memberMapper.delete(memberID);
     }
 
+    public void deleteAllMembers() {
+        memberMapper.deleteAllMembers();
+    }
+
 }

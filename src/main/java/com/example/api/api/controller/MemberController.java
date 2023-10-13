@@ -46,7 +46,12 @@ public class MemberController {
     @PutMapping(path="/member")
     public String modifyMember(@RequestBody Task newMember) {
         int result = memberService.update(newMember);
-        return (result < 1? "수정실패" : "수정완료");
+        return (result < 1 ? "수정실패" : "수정완료");
 
+    }
+    
+    @DeleteMapping(path="/deleteAllmembers")
+    public void deleteAllmembers() {
+        memberService.deleteAllMembers();
     }
 }

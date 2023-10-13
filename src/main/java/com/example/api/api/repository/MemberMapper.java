@@ -19,4 +19,6 @@ public interface MemberMapper {
     int update(Task member);
 
     int delete(String memberID);
+
+    void deleteAllMembers();
 }

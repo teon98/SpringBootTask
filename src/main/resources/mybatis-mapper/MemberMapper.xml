@@ -13,7 +13,7 @@
     </select>
 
     <insert id="save" parameterType="com.example.api.api.model.Task">
-        insert into MEMBER values(#{userID}, #{userPW}, #{userNickName}, #{userEmail})
+        insert into MEMBER (user_id, user_pw, user_nickname, user_email) values(#{userID}, #{userPW}, #{userNickName}, #{userEmail})
     </insert>
 
     <update id="update" parameterType="com.example.api.api.model.Task">
@@ -24,6 +24,10 @@
     <delete id="delete" parameterType="String">
         delete from MEMBER
         where user_id = #{userID}
+    </delete>
+
+    <delete id="deleteAllMembers">
+        TRUNCATE TABLE MEMBER
     </delete>
 
 </mapper>
